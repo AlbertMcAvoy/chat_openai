@@ -1,5 +1,13 @@
 # Projet de Chat utilisant NextJS, NestJS et OpenAI API
 
+Pour utiliser l'application avec OpenAi, il faut clone le fichier .env-example en .env et valoriser la variable `OPEN_API_KEY` avec une clef valide
+Autrement, on passera par koboldCpp en local.
+
+Pour kobold, il faut lancer `koboldcpp.exe` téléchargeable [ici](https://github.com/LostRuins/koboldcpp/releases/tag/v1.51.1).
+Ensuite il faut avoir un fichier LLM compilé (en .gguf ou en .bin). Pour ce TP j'ai utilisé `ggml-vicuna-7b-1.1-q4_2` téléchargeable [ici](ggml-vicuna-7b-1.1-q4_2).
+
+En cliquant sur launch dans kobold, on sélectionne le fichier .bin et il faut attendre quelques instants, une page navigateur s'ouvre et l'api est utilisable.
+
 ## Introduction
 
 Dans le cadre de ce projet, nous allons déployer un chat en temps réel, construit avec NextJS et NestJS, et intégrant des fonctionnalités basées sur l'API d'OpenAI. Ce chat fera appel à l'API d'OpenAI pour différentes opérations comme la traduction de messages, la validation des informations et la suggestion de réponses.
