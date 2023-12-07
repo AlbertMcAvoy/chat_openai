@@ -51,18 +51,9 @@ const Chat = () => {
         }
     }, [messages]);
 
-    // debug
-    const disconnectAll = () => {
-        socket.emit('chat-disconnect-all');
-    }
-
     return (
         <div className="flex mb-4">
             <div className="flex flex-col items-center w-full gap-5 mt-5">
-                {/*debug*/}
-                <button onClick={disconnectAll}
-                    className="flex-shrink-0 border-transparent border-4 text-sm py-1 px-2 rounded bg-red-800 text-white"> Déconnecter tous les clients (pour react) </button>
-                {/*debug*/}
                 <h1> Chat </h1>
                 <Username socket={socket} setUsername={setUsername} username={username} />
                 <Traduction language={language} setLanguage={setLanguage} />

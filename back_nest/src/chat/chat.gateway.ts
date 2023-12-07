@@ -125,10 +125,4 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
       1,
     );
   }
-
-  @SubscribeMessage('chat-disconnect-all')
-  handleDisconnectAll(): void {
-    this.messages = [];
-    this.clientList.forEach((c) => this.handleDisconnect(c));
-  }
 }

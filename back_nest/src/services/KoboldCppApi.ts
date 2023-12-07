@@ -54,14 +54,33 @@ export class KoboldCppApi implements IApiIA {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         result = response.results[0].text;
       });
 
     return result.split(' | ');
   }
 
-  verify(messagesSelected: string[]): Promise<string> {
-    return Promise.resolve("");
+  async verify(messagesSelected: any[]): Promise<string> {
+    let result = '';
+    let content = 'Tu réponds uniquement par true ou false. Je vais t\'envoyer les données sous cette forme : [{"question": 1, "question": \'Il y a eu un attentat le 09/11/2001\'},].Tu réponds avec un tableau d\'objet sous cette forme: [{"question": 1, "response": \'true\'},]. Si tu ne peux pas répondre par vrai ou faux, tu réponds faux. Voici les données :';
+
+    messagesSelected.forEach((ms) => {
+      content += `{"question": ${ms.id}, "question": ${ms.content}},`;
+    });
+
+    content += ']';
+
+    this.request.prompt = content;
+
+    await fetch(this.url, {
+      method: 'POST',
+      body: JSON.stringify(this.request),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        result = response.results[0].text;
+      });
+
+    return result;
   }
 }
