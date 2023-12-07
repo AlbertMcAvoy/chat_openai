@@ -8,6 +8,8 @@ Ensuite il faut avoir un fichier LLM compilé (en .gguf ou en .bin). Pour ce TP 
 
 En cliquant sur launch dans kobold, on sélectionne le fichier .bin et il faut attendre quelques instants, une page navigateur s'ouvre et l'api est utilisable.
 
+Pour lancer l'application il faut faire un `npm i` dans le front_next et dans le back_nest, et ensuite `npm run dev` dans le front_next et `npm run start:dev` dans back_nest. Consulter [http://localhost:3000/chat](http://localhost:3000/chat).
+
 ## Introduction
 
 Dans le cadre de ce projet, nous allons déployer un chat en temps réel, construit avec NextJS et NestJS, et intégrant des fonctionnalités basées sur l'API d'OpenAI. Ce chat fera appel à l'API d'OpenAI pour différentes opérations comme la traduction de messages, la validation des informations et la suggestion de réponses.
